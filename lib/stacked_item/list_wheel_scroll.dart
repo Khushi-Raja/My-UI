@@ -4,8 +4,7 @@ class ListWheelScrollPractice extends StatefulWidget {
   const ListWheelScrollPractice({Key? key}) : super(key: key);
 
   @override
-  _ListWheelScrollPracticeState createState() =>
-      _ListWheelScrollPracticeState();
+  State<ListWheelScrollPractice> createState() => _ListWheelScrollPracticeState();
 }
 
 class _ListWheelScrollPracticeState extends State<ListWheelScrollPractice> {
@@ -16,7 +15,7 @@ class _ListWheelScrollPracticeState extends State<ListWheelScrollPractice> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Center(
+        title: const Center(
           child: Text(
             "Khushi A. Raja",
             style: TextStyle(fontWeight: FontWeight.w600),
@@ -41,47 +40,47 @@ class _ListWheelScrollPracticeState extends State<ListWheelScrollPractice> {
             onTap: () => _updateSelectedName("ATM"),
             text: "ATM",
             icon: Icons.local_atm,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Cafe"),
             text: "Cafe",
             icon: Icons.local_cafe,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Car Wash"),
             text: "Car Wash",
             icon: Icons.local_car_wash,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Convenience Store"),
             text: "Convenience Store",
             icon: Icons.local_convenience_store,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Dining"),
             text: "Dining",
             icon: Icons.local_dining,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Drink"),
             text: "Drink",
             icon: Icons.local_drink,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Florist"),
             text: "Florist",
             icon: Icons.local_florist,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Gas Station"),
             text: "Gas Station",
             icon: Icons.local_gas_station,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         CustomWidget(
             onTap: () => _updateSelectedName("Grocery Store"),
             text: "Grocery Store",
             icon: Icons.local_grocery_store,
-            textDis: "Discription Here"),
+            textDis: "Description Here"),
         // Add more CustomWidget with onTap for other items
       ]),
       bottomSheet: selectedName.isNotEmpty
@@ -90,8 +89,9 @@ class _ListWheelScrollPracticeState extends State<ListWheelScrollPractice> {
               color: Colors.orange,
               alignment: Alignment.center,
               child: Text(
-                '$selectedName',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                selectedName,
+                style:
+                    const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
             )
           : null,
@@ -130,6 +130,12 @@ class CustomWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          color: Colors.grey[100],
+        ),
+        width: double.infinity,
+        margin: const EdgeInsets.only(bottom: 5, left: 5, right: 5),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Row(
@@ -139,9 +145,7 @@ class CustomWidget extends StatelessWidget {
                 size: 60,
                 color: Colors.grey,
               ),
-              SizedBox(
-                width: 40,
-              ),
+              const SizedBox(width: 40),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -166,12 +170,6 @@ class CustomWidget extends StatelessWidget {
             ],
           ),
         ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          color: Colors.grey[100],
-        ),
-        width: double.infinity,
-        margin: EdgeInsets.only(bottom: 5, left: 5, right: 5),
       ),
     );
   }
