@@ -27,14 +27,15 @@ class _LoginState extends State<Login> {
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0),
                   child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) {
-                            return const WelcomeScreen();
-                          },
-                        ));
-                      },
-                      child: const Icon(Icons.arrow_back_ios)),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) {
+                          return const WelcomeScreen();
+                        },
+                      ));
+                    },
+                    child: const Icon(Icons.arrow_back_ios),
+                  ),
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 20, left: 10),
@@ -92,9 +93,11 @@ class _LoginState extends State<Login> {
                       TextFormField(
                         obscureText: true,
                         validator: MultiValidator([
-                          RequiredValidator(errorText: '* Please enter Password'),
+                          RequiredValidator(
+                              errorText: '* Please enter Password'),
                           MinLengthValidator(8,
-                              errorText: '* Password must have atleast 8 digit'),
+                              errorText:
+                                  '* Password must have atleast 8 digit'),
                           PatternValidator(r'(?=.*?[#!@$%^&*-])',
                               errorText:
                                   '* Password must have atleast one special character')
@@ -138,14 +141,14 @@ class _LoginState extends State<Login> {
                         width: MediaQuery.of(context).size.width,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                             // Replace with your custom color value
+                            // Replace with your custom color value
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
+                            backgroundColor: Colors.black
                           ),
                           onPressed: () {
                             if (_formkey.currentState!.validate()) {
-                              print('form submiitted');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Text('Logged in successfully'),
@@ -161,12 +164,13 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       Container(
-                          padding: const EdgeInsets.all(20),
-                          alignment: Alignment.center,
-                          child: const Text(
-                            "OR",
-                            style: TextStyle(fontWeight: FontWeight.w500),
-                          )),
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "OR",
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      ),
                       SizedBox(
                         height: 50,
                         width: MediaQuery.of(context).size.width,
@@ -189,8 +193,8 @@ class _LoginState extends State<Login> {
                               ),
                               Text(
                                 'Sign in with Google',
-                                style:
-                                    TextStyle(color: Colors.black, fontSize: 16),
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 16),
                               ),
                             ],
                           ),
@@ -209,14 +213,15 @@ class _LoginState extends State<Login> {
                                 style: TextStyle(fontWeight: FontWeight.w500),
                               )),
                           Container(
-                              padding: const EdgeInsets.all(2),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                "Signup",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.blue),
-                              )),
+                            padding: const EdgeInsets.all(2),
+                            alignment: Alignment.center,
+                            child: const Text(
+                              "Signup",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.blue),
+                            ),
+                          ),
                         ],
                       ),
                     ],

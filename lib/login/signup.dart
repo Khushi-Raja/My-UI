@@ -213,6 +213,7 @@ class _SignupState extends State<Signup> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
+                            backgroundColor: Colors.black
                           ),
                           onPressed: () {},
                           child: const Text(
