@@ -39,14 +39,15 @@ class ChatScreenFinal extends StatelessWidget {
                             size: 30,
                           ),
                           Positioned(
-                              top: 3,
-                              bottom: 0,
-                              right: 0,
-                              left: 12,
-                              child: Text(
-                                'Z',
-                                style: TextStyle(color: Colors.white),
-                              ))
+                            top: 3,
+                            bottom: 0,
+                            right: 0,
+                            left: 12,
+                            child: Text(
+                              'Z',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          )
                         ],
                       ),
                       const SizedBox(width: 25.0),
@@ -56,19 +57,15 @@ class ChatScreenFinal extends StatelessWidget {
                         size: 30,
                       ),
                       const SizedBox(width: 25.0),
-                      // Add spacing between text and image
-                      // CircleAvatar(
-                      //   radius: 35,
-                      //   backgroundImage: AssetImage('images/boy.jpg'),
-                      // )
                       ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            'assets/images/boy.jpg',
-                            height: 50,
-                            width: 50,
-                            fit: BoxFit.cover,
-                          ))
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          'assets/images/boy.jpg',
+                          height: 50,
+                          width: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -126,15 +123,15 @@ class ChatScreenFinal extends StatelessWidget {
               ],
             ),
             Positioned(
-                bottom: 20,
-                left: 0,
-                right: 0,
-                child: CustomButtomNavigationBar(
-                  index: 1,
-                )),
+              bottom: 20,
+              left: 0,
+              right: 0,
+              child: CustomButtomNavigationBar(
+                index: 1,
+              ),
+            ),
           ],
         ),
-        // bottomNavigationBar: CustomButtomNavigationBar(),
       ),
     );
   }

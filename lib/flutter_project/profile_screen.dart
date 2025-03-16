@@ -29,57 +29,18 @@ class ProfileScreenFinal extends StatelessWidget {
                         viewportFraction: 1,
                       ),
                       items: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/anime1.jpg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/anime2.jpg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/anime3.jpeg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/anime4.jpeg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/anime5.jpg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/anime6.webp'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
+                        customContainer(
+                            const AssetImage('assets/images/anime1.jpg')),
+                        customContainer(
+                            const AssetImage('assets/images/anime2.jpg')),
+                        customContainer(
+                            const AssetImage('assets/images/anime3.jpeg')),
+                        customContainer(
+                            const AssetImage('assets/images/anime4.jpeg')),
+                        customContainer(
+                            const AssetImage('assets/images/anime5.jpg')),
+                        customContainer(
+                            const AssetImage('assets/images/anime6.webp')),
                       ],
                     ),
                     const Positioned(
@@ -92,12 +53,9 @@ class ProfileScreenFinal extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
+                const SizedBox(height: 5),
                 Expanded(
                   child: Container(
-                    // margin: EdgeInsets.all(8),
                     color: Colors.white,
                     child: ListView.builder(
                       itemBuilder: (context, index) {
@@ -182,25 +140,23 @@ class ProfileScreenFinal extends StatelessWidget {
                                       ),
                                     ),
                                     const Padding(
-                                      padding:
-                                          EdgeInsets.only(right: 40.0),
+                                      padding: EdgeInsets.only(right: 40.0),
                                       child: Stack(
-
                                         fit: StackFit.loose,
                                         children: [
                                           Positioned(
                                             left: 18,
                                             child: Padding(
-                                              padding: EdgeInsets.only(
-                                                  right: 18.0),
+                                              padding:
+                                                  EdgeInsets.only(right: 18.0),
                                               child: CircleAvatar(
                                                 backgroundColor: Colors.orange,
                                               ),
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.only(
-                                                right: 18.0),
+                                            padding:
+                                                EdgeInsets.only(right: 18.0),
                                             child: CircleAvatar(
                                               backgroundImage: AssetImage(
                                                   "assets/images/india.png"),
@@ -224,15 +180,27 @@ class ProfileScreenFinal extends StatelessWidget {
               ],
             ),
             Positioned(
-                bottom: 20,
-                left: 0,
-                right: 0,
-                child: CustomButtomNavigationBar(
-                  index: 0,
-                ))
+              bottom: 20,
+              left: 0,
+              right: 0,
+              child: CustomButtomNavigationBar(
+                index: 0,
+              ),
+            )
           ],
         ),
-        // bottomNavigationBar: CustomButtomNavigationBar(),
+      ),
+    );
+  }
+
+  Widget customContainer(ImageProvider<Object> image) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: image,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

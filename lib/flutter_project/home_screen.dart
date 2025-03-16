@@ -19,18 +19,19 @@ class HomeScreen extends StatelessWidget {
                   Stack(
                     children: [
                       Opacity(
-                          opacity: 0.25,
-                          child: ClipPath(
-                            clipper: WaveClipperOne(
-                              flip: true,
-                            ),
-                            child: Image.asset(
-                              "assets/images/anime3.jpeg",
-                              height: 150,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                          )),
+                        opacity: 0.25,
+                        child: ClipPath(
+                          clipper: WaveClipperOne(
+                            flip: true,
+                          ),
+                          child: Image.asset(
+                            "assets/images/anime3.jpeg",
+                            height: 150,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(20),
                         child: Column(
@@ -91,7 +92,8 @@ class HomeScreen extends StatelessWidget {
                           child: Container(
                             alignment: Alignment.centerRight,
                             child: const CircleAvatar(
-                              backgroundImage: AssetImage("assets/images/india.png"),
+                              backgroundImage:
+                                  AssetImage("assets/images/india.png"),
                               radius: 25,
                             ),
                           ),
@@ -125,9 +127,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
+                  const SizedBox(height: 25),
                   SizedBox(
                     height: 100,
                     child: ListView.builder(
@@ -149,9 +149,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
+                  const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Container(
@@ -200,9 +198,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
+                  const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Container(
@@ -230,9 +226,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
+                  const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Container(
@@ -246,9 +240,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 10),
                   AspectRatio(
                     aspectRatio: 0.38,
                     child: GridView.builder(
@@ -262,11 +254,12 @@ class HomeScreen extends StatelessWidget {
                       ),
                       itemBuilder: (context, index) {
                         return ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(
-                              arrImages[index],
-                              fit: BoxFit.cover,
-                            ));
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            arrImages[index],
+                            fit: BoxFit.cover,
+                          ),
+                        );
                       },
                       itemCount: 10,
                     ),
@@ -278,9 +271,7 @@ class HomeScreen extends StatelessWidget {
               bottom: 20,
               left: 0,
               right: 0,
-              child: CustomButtomNavigationBar(
-                index: 2,
-              ),
+              child: CustomButtomNavigationBar(index: 2),
             ),
           ],
         ),

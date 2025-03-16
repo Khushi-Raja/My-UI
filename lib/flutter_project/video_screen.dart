@@ -121,9 +121,7 @@ class _VideoScreenFinalState extends State<VideoScreenFinal> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 13,
-                              ),
+                              const SizedBox(width: 13),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(12),
                                 child: Container(
@@ -181,13 +179,10 @@ class _VideoScreenFinalState extends State<VideoScreenFinal> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Container(
-
                       alignment: Alignment.topLeft,
                       child: Text(
                         "The embroidery should not be begun\nuntil the paste is perfectly dry, & the\npattern adheres firmly to the...",
@@ -196,13 +191,10 @@ class _VideoScreenFinalState extends State<VideoScreenFinal> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Row(
                     children: [
                       Container(
-
                         padding: const EdgeInsets.only(left: 20, right: 10),
                         child: const Icon(
                           Icons.favorite,
@@ -249,11 +241,8 @@ class _VideoScreenFinalState extends State<VideoScreenFinal> {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   ListView.builder(
-                    // itemExtent: 80,
                     itemCount: 10,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
@@ -305,15 +294,13 @@ class _VideoScreenFinalState extends State<VideoScreenFinal> {
               ),
             ),
             Positioned(
-                bottom: 20,
-                left: 0,
-                right: 0,
-                child: CustomButtomNavigationBar(
-                  index: 3,
-                )),
+              bottom: 20,
+              left: 0,
+              right: 0,
+              child: CustomButtomNavigationBar(index: 3),
+            ),
           ],
         ),
-        // bottomNavigationBar: CustomButtomNavigationBar(),
       ),
     );
   }
