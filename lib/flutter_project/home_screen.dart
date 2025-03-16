@@ -101,31 +101,15 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
+                  customContainer(
+                      padding: const EdgeInsets.only(left: 20),
+                      text: "Sandy",
+                      fontSize: 35,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                  customContainer(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: const Text(
-                        "Sandy",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 35,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Designer at applemax",
-                        style: TextStyle(
-                            color: Colors.grey.shade400,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16),
-                      ),
-                    ),
+                    text: "Designer at applemax",
                   ),
                   const SizedBox(height: 25),
                   SizedBox(
@@ -150,18 +134,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 25),
-                  Padding(
+                  customContainer(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Sandy Highlights",
-                        style: TextStyle(
-                            color: Colors.grey.shade400,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16),
-                      ),
-                    ),
+                    text: "Sandy Highlights",
                   ),
                   SizedBox(
                     height: 150,
@@ -198,47 +173,22 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(height: 25),
-                  Padding(
+                  customContainer(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "About Sandy",
-                        style: TextStyle(
-                          color: Colors.grey.shade400,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
+                    text: "About Sandy",
                   ),
-                  Padding(
+                  const SizedBox(height: 25),
+                  customContainer(
                     padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: const Text(
+                    text:
                         "The embroidery should not be begun\nuntil the paste is perfectly dry",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18),
-                      ),
-                    ),
+                    fontSize: 18,
+                    color: Colors.black,
                   ),
                   const SizedBox(height: 25),
-                  Padding(
+                  customContainer(
                     padding: const EdgeInsets.only(left: 20),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "My Groups",
-                        style: TextStyle(
-                            color: Colors.grey.shade400,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16),
-                      ),
-                    ),
+                    text: "My Groups",
                   ),
                   const SizedBox(height: 10),
                   AspectRatio(
@@ -274,6 +224,28 @@ class HomeScreen extends StatelessWidget {
               child: CustomButtomNavigationBar(index: 2),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget customContainer(
+      {required EdgeInsetsGeometry padding,
+      required String text,
+      double? fontSize = 16,
+      Color? color,
+      FontWeight? fontWeight = FontWeight.w600}) {
+    return Padding(
+      padding: padding,
+      child: Container(
+        alignment: Alignment.topLeft,
+        child: Text(
+          text,
+          style: TextStyle(
+            color: color ?? Colors.grey.shade400,
+            fontWeight: fontWeight,
+            fontSize: fontSize,
+          ),
         ),
       ),
     );
