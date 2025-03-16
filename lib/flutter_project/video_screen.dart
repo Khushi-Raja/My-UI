@@ -1,44 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_uis/flutter_project/constants.dart';
 import 'package:my_uis/flutter_project/custom_buttom_navigationbar.dart';
 import 'package:video_player/video_player.dart';
-
-var arrNames = [
-  "Hailey",
-  "Kylie",
-  "Anne",
-  "Camila",
-  "Shwan",
-  "Taylor",
-  "Demi",
-  "Jakson",
-  "Kendall",
-  "Charlie"
-];
-var arrImages = [
-  "assets/images/animeboy2.png",
-  "assets/images/animegirl1.jpg",
-  "assets/images/animeboy5.png",
-  "assets/images/animeboy3.png",
-  "assets/images/animeboy4.jpg",
-  "assets/images/animeboy1.jpg",
-  "assets/images/animeboy2.png",
-  "assets/images/animegirl1.jpg",
-  "assets/images/animegirl2.png",
-  "assets/images/boy.jpg",
-];
-
-var arrMessage = [
-  "Cool",
-  "How many coins you...",
-  "I WON!!!",
-  "Awesome!",
-  "Games Update",
-  "I'm ready bro",
-  "Let's Play",
-  "Shared a Photo...",
-  "Liked Your Message",
-  "Losser..."
-];
 
 class VideoScreenFinal extends StatefulWidget {
   const VideoScreenFinal({super.key});
