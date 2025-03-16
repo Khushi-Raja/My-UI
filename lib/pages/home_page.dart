@@ -29,9 +29,11 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                    return const Second();
-                  },));
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return const Second();
+                    },
+                  ));
                 },
                 child: const Icon(
                   Icons.add_box,
@@ -73,9 +75,7 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              const SizedBox(
-                                height: 8,
-                              ),
+                              const SizedBox(height: 8),
                               Text(
                                 "23 Jan,2021",
                                 style: TextStyle(color: Colors.blue[200]),
@@ -97,18 +97,18 @@ class _HomePageState extends State<HomePage> {
                           //search bar
                         ],
                       ),
-                      const SizedBox(
-                        height: 25,
-                      ),
+                      const SizedBox(height: 25),
                       TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
-                            borderSide: const BorderSide(color: Colors.white, width: 3),
+                            borderSide:
+                                const BorderSide(color: Colors.white, width: 3),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
-                            borderSide: const BorderSide(color: Colors.white, width: 3),
+                            borderSide:
+                                const BorderSide(color: Colors.white, width: 3),
                           ),
                           prefixIcon: const Icon(
                             Icons.search,
@@ -118,9 +118,7 @@ class _HomePageState extends State<HomePage> {
                           labelStyle: const TextStyle(color: Colors.white),
                         ),
                       ),
-                      const SizedBox(
-                        height: 25,
-                      ),
+                      const SizedBox(height: 25),
 
                       //how do you feel
                       const Row(
@@ -140,71 +138,39 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      //4 different faces
+                      const SizedBox(height: 25),
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          //bad
                           Column(
                             children: [
-                              EmoticonFace(
-                                emoticonFace: "🥹",
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              Text(
-                                "Bad",
-                                style: TextStyle(color: Colors.white),
-                              )
+                              EmoticonFace(emoticonFace: "🥹"),
+                              SizedBox(height: 8),
+                              Text("Bad", style: TextStyle(color: Colors.white))
                             ],
                           ),
-                          //fine
                           Column(
                             children: [
-                              EmoticonFace(
-                                emoticonFace: "🥰",
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              Text(
-                                "Fine",
-                                style: TextStyle(color: Colors.white),
-                              )
+                              EmoticonFace(emoticonFace: "🥰"),
+                              SizedBox(height: 8),
+                              Text("Fine",
+                                  style: TextStyle(color: Colors.white))
                             ],
                           ),
-                          //well
                           Column(
                             children: [
-                              EmoticonFace(
-                                emoticonFace: "🤩",
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              Text(
-                                "Well",
-                                style: TextStyle(color: Colors.white),
-                              )
+                              EmoticonFace(emoticonFace: "🤩"),
+                              SizedBox(height: 8),
+                              Text("Well",
+                                  style: TextStyle(color: Colors.white))
                             ],
                           ),
-                          //excellent
                           Column(
                             children: [
-                              EmoticonFace(
-                                emoticonFace: "🥳",
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              Text(
-                                "Excellent",
-                                style: TextStyle(color: Colors.white),
-                              )
+                              EmoticonFace(emoticonFace: "🥳"),
+                              SizedBox(height: 8),
+                              Text("Excellent",
+                                  style: TextStyle(color: Colors.white))
                             ],
                           ),
                         ],
@@ -212,9 +178,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
+                const SizedBox(height: 25),
                 Container(
                   width: double.infinity,
                   decoration: const BoxDecoration(
@@ -225,7 +189,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 5.0, left: 20, right: 30),
+                    padding:
+                        const EdgeInsets.only(top: 5.0, left: 20, right: 30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -250,9 +215,7 @@ class _HomePageState extends State<HomePage> {
                             )
                           ],
                         ),
-                        const SizedBox(
-                          height: 30,
-                        ),
+                        const SizedBox(height: 30),
                         ListView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -269,49 +232,39 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(10),
                                   child: ListTile(
                                     leading: ClipRRect(
-
                                       borderRadius: BorderRadius.circular(12),
                                       child: Container(
-                                        height: 50,
-                                        width: 45,
-                                        color: Colors.yellow,
-                                        child: arrIcons[index],
-                                      ),
+                                          height: 50,
+                                          width: 45,
+                                          color: Colors.yellow,
+                                          child: arrIcons[index]),
                                     ),
                                     title: Text(
                                       arrSkills[index],
                                       style: const TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                      ),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20,
+                                          color: Colors.black),
                                     ),
                                     subtitle: Row(
                                       children: [
-                                        Icon(
-                                          Icons.horizontal_distribute,
-                                          color: Colors.grey.shade400,
-                                          size: 10,
-                                        ),
-                                        Text(
-                                          " Excercises ",
-                                          style: TextStyle(
-                                            fontSize: 16,
+                                        Icon(Icons.horizontal_distribute,
                                             color: Colors.grey.shade400,
-                                            fontWeight: FontWeight.w500,
-                                          ),
+                                            size: 10),
+                                        Text(
+                                          "Exercises",
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.grey.shade400,
+                                              fontWeight: FontWeight.w500),
                                         ),
                                       ],
                                     ),
-                                    trailing: Icon(
-                                      Icons.more_horiz,
-                                      color: Colors.grey.shade400,
-                                    ),
+                                    trailing: Icon(Icons.more_horiz,
+                                        color: Colors.grey.shade400),
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
+                                const SizedBox(height: 20),
                               ],
                             );
                           },
@@ -328,4 +281,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

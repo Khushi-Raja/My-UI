@@ -55,9 +55,7 @@ class Second extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(
-                              height: 8,
-                            ),
+                            const SizedBox(height: 8),
                             Text(
                               "23 Jan,2021",
                               style: TextStyle(color: Colors.blue[200]),
@@ -76,9 +74,7 @@ class Second extends StatelessWidget {
                         //search bar
                       ],
                     ),
-                    const SizedBox(
-                      height: 25,
-                    ),
+                    const SizedBox(height: 25),
                     TextField(
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -126,88 +122,26 @@ class Second extends StatelessWidget {
                                 fontSize: 22, fontWeight: FontWeight.w600),
                           ),
                           const Spacer(),
-                          Icon(
-                            Icons.more_horiz,
-                            color: Colors.grey.shade400,
-                          ),
+                          customIcon(),
                         ],
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const SizedBox(height: 30),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.purple,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            height: 90,
-                            width: MediaQuery.of(context).size.width * 0.4,
-                            child: const Center(
-                              child: Text(
-                                "Relationship",
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.white),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            height: 90,
-                            width: MediaQuery.of(context).size.width * 0.4,
-                            child: const Center(
-                                child: Text(
-                              "Career",
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.white),
-                            )),
-                          ),
+                          customContainer(text: "Relationship", width: MediaQuery.of(context).size.width * 0.4, color: Colors.purple),
+                          customContainer(text: "Career", width: MediaQuery.of(context).size.width * 0.4, color: Colors.blue),
                         ],
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            height: 90,
-                            width: MediaQuery.of(context).size.width * 0.4,
-                            child: const Center(
-                                child: Text(
-                              "Education",
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.white),
-                            )),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            height: 90,
-                            width: MediaQuery.of(context).size.width * 0.4,
-                            child: const Center(
-                                child: Text(
-                              "Other",
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.white),
-                            )),
-                          ),
+                          customContainer(color: Colors.orange, width: MediaQuery.of(context).size.width * 0.4,text: "Education"),
+                          customContainer(text: "Other", width: MediaQuery.of(context).size.width * 0.4, color: Colors.red),
                         ],
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const SizedBox(height: 30),
                       Row(
                         children: [
                           const Text(
@@ -216,15 +150,10 @@ class Second extends StatelessWidget {
                                 fontSize: 22, fontWeight: FontWeight.w600),
                           ),
                           const Spacer(),
-                          Icon(
-                            Icons.more_horiz,
-                            color: Colors.grey.shade400,
-                          ),
+                          customIcon(),
                         ],
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const SizedBox(height: 30),
                       ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -234,7 +163,6 @@ class Second extends StatelessWidget {
                             children: [
                               ListTile(
                                 leading: ClipRRect(
-
                                   borderRadius: BorderRadius.circular(12),
                                   child: Container(
                                     height: 50,
@@ -268,14 +196,9 @@ class Second extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                trailing: Icon(
-                                  Icons.more_horiz,
-                                  color: Colors.grey.shade400,
-                                ),
+                                trailing: customIcon(),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              const SizedBox(height: 20),
                             ],
                           );
                         },
@@ -288,6 +211,29 @@ class Second extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+  Widget customContainer({double? width, required String text, Color? color}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      height: 90,
+      width: width,
+      child: Center(
+          child: Text(
+            text,
+            style:
+            const TextStyle(fontSize: 18, color: Colors.white),
+          )),
+    );
+  }
+
+  Widget customIcon() {
+    return Icon(
+      Icons.more_horiz,
+      color: Colors.grey.shade400,
     );
   }
 }

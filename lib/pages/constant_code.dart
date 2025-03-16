@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 var arrIcons = [
-  CustomIcon(icon: Icons.favorite),
-  CustomIcon(icon: Icons.favorite),
-  CustomIcon(icon: Icons.favorite),
-  CustomIcon(icon: Icons.favorite),
-  CustomIcon(icon: Icons.favorite),
+  customIcon(icon: Icons.favorite),
+  customIcon(icon: Icons.favorite),
+  customIcon(icon: Icons.favorite),
+  customIcon(icon: Icons.favorite),
+  customIcon(icon: Icons.favorite),
 ];
 var arrSkills = [
   "Reading skills",
@@ -17,7 +16,7 @@ var arrSkills = [
 ];
 
 
-Widget CustomIcon({
+Widget customIcon({
   required IconData icon,
   double? size = 30,
   Color? favColor = Colors.white,
