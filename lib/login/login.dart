@@ -55,43 +55,26 @@ class _LoginState extends State<Login> {
                   "Make it work, make it right, make it fast",
                   style: TextStyle(fontSize: 16),
                 ),
-                const SizedBox(
-                  height: 50,
-                ),
+                const SizedBox(height: 50),
                 Form(
                   key: _formkey,
                   child: Column(
                     children: [
-                      TextFormField(
+                      customTextFormField(
+                        labelText: "E-mail",
                         validator: MultiValidator([
                           RequiredValidator(errorText: "* Required"),
                           EmailValidator(errorText: "Enter valid email id"),
                         ]),
-                        decoration: InputDecoration(
-                          enabledBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                          labelText: "E-mail",
-                          labelStyle: TextStyle(color: Colors.grey.shade400),
-                          prefixIcon: Icon(
-                            Icons.mail,
-                            color: Colors.grey.shade400,
-                          ),
-                          hintText: "abc@gmail.com",
+                        prefixIcon: Icon(
+                          Icons.mail,
+                          color: Colors.grey.shade400,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextFormField(
+                      const SizedBox(height: 10),
+                      customTextFormField(
                         obscureText: true,
+                        labelText: "Password",
                         validator: MultiValidator([
                           RequiredValidator(
                               errorText: '* Please enter Password'),
@@ -102,51 +85,31 @@ class _LoginState extends State<Login> {
                               errorText:
                                   '* Password must have atleast one special character')
                         ]),
-                        decoration: InputDecoration(
-                          enabledBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                          focusedBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                          labelText: "Password",
-                          labelStyle: TextStyle(color: Colors.grey.shade400),
-                          prefixIcon: Icon(
-                            Icons.key,
-                            color: Colors.grey.shade400,
-                          ),
-                          suffixIcon: Icon(
-                            Icons.remove_red_eye,
-                            color: Colors.grey.shade400,
-                          ),
+                        prefixIcon: Icon(
+                          Icons.key,
+                          color: Colors.grey.shade400,
+                        ),
+                        suffixIcon: Icon(
+                          Icons.remove_red_eye,
+                          color: Colors.grey.shade400,
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(15),
-                        alignment: Alignment.topRight,
-                        child: const Text(
-                          "Forget Password ?",
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15),
-                        ),
-                      ),
+                      customContainer(
+                          data: "Forget Password ?",
+                          color: Colors.blue,
+                          padding: const EdgeInsets.all(15),
+                          alignment: Alignment.topRight,
+                          fontSize: 15),
                       SizedBox(
                         height: 50,
                         width: MediaQuery.of(context).size.width,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            // Replace with your custom color value
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            backgroundColor: Colors.black
-                          ),
+                              // Replace with your custom color value
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              backgroundColor: Colors.black),
                           onPressed: () {
                             if (_formkey.currentState!.validate()) {
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -163,14 +126,8 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        alignment: Alignment.center,
-                        child: const Text(
-                          "OR",
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        ),
-                      ),
+                      customContainer(
+                          data: 'OR', padding: const EdgeInsets.all(20)),
                       SizedBox(
                         height: 50,
                         width: MediaQuery.of(context).size.width,
@@ -188,9 +145,7 @@ class _LoginState extends State<Login> {
                                 Bootstrap.google,
                                 color: Colors.black,
                               ),
-                              SizedBox(
-                                width: 10,
-                              ),
+                              SizedBox(width: 10),
                               Text(
                                 'Sign in with Google',
                                 style: TextStyle(
@@ -200,72 +155,93 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 15,
-                      ),
+                      const SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                              alignment: Alignment.center,
-                              child: const Text(
-                                "Don't have an Account? ",
-                                style: TextStyle(fontWeight: FontWeight.w500),
-                              )),
-                          Container(
-                            padding: const EdgeInsets.all(2),
-                            alignment: Alignment.center,
-                            child: const Text(
-                              "Signup",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.blue),
-                            ),
-                          ),
+                          customContainer(data: "Don't have an Account? "),
+                          customContainer(
+                              data: "Signup",
+                              color: Colors.blue,
+                              padding: const EdgeInsets.all(2)),
                         ],
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: const BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                      child: const Icon(
-                        BoxIcons.bxl_android,
-                        size: 40,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: const BoxDecoration(
-                        color: Colors.yellow,
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                      child: const Icon(
-                        BoxIcons.bxl_apple,
-                        size: 40,
-                      ),
-                    )
+                    customIcon(icon: BoxIcons.bxl_android),
+                    const SizedBox(width: 40),
+                    customIcon(icon: BoxIcons.bxl_apple),
                   ],
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget customIcon({IconData? icon}) {
+    return Container(
+      height: 60,
+      width: 60,
+      decoration: const BoxDecoration(
+        color: Colors.yellow,
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+      child: Icon(
+        icon,
+        size: 40,
+      ),
+    );
+  }
+
+  Widget customTextFormField(
+      {String? Function(String?)? validator,
+      required String labelText,
+      Widget? prefixIcon,
+      Widget? suffixIcon,
+      bool obscureText = false}) {
+    return TextFormField(
+      obscureText: obscureText,
+      validator: validator,
+      decoration: InputDecoration(
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12),
+          ),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(12),
+          ),
+        ),
+        labelText: labelText,
+        labelStyle: TextStyle(color: Colors.grey.shade400),
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
+      ),
+    );
+  }
+
+  Widget customContainer(
+      {required String data,
+      Color? color,
+      EdgeInsetsGeometry? padding,
+      AlignmentGeometry? alignment,
+      double? fontSize}) {
+    return Container(
+      padding: padding,
+      alignment: alignment ?? Alignment.center,
+      child: Text(
+        data,
+        style: TextStyle(
+            fontWeight: FontWeight.w500, color: color, fontSize: fontSize),
       ),
     );
   }
